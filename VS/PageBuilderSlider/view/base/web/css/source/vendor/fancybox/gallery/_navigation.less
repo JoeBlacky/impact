@@ -1,0 +1,164 @@
+& when (@media-common = true) {
+    :root {
+        --f-button-width: 40px;
+        --f-button-height: 40px;
+        --f-button-border: 0;
+        --f-button-border-radius: 0;
+        --f-button-color: #374151;
+        --f-button-bg: #f8f8f8;
+        --f-button-hover-bg: #e0e0e0;
+        --f-button-active-bg: #d0d0d0;
+        --f-button-shadow: none;
+        --f-button-transition: all 0.15s ease;
+        --f-button-transform: none;
+        --f-button-svg-width: 20px;
+        --f-button-svg-height: 20px;
+        --f-button-svg-stroke-width: 1.5;
+        --f-button-svg-fill: none;
+        --f-button-svg-filter: none;
+        --f-button-svg-disabled-opacity: 0.65;
+    }
+
+    .f-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: content-box;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: var(--f-button-width);
+        height: var(--f-button-height);
+        border: var(--f-button-border);
+        border-radius: var(--f-button-border-radius);
+        color: var(--f-button-color);
+        background: var(--f-button-bg);
+        box-shadow: var(--f-button-shadow);
+        pointer-events: all;
+        cursor: pointer;
+        transition: var(--f-button-transition);
+    }
+
+    .f-button:active:not([disabled]) {
+        background-color: var(--f-button-active-bg);
+    }
+
+    .f-button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    .f-button:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 0 var(--f-button-outline, 2px)
+        var(--f-button-outline-color, var(--f-button-color));
+    }
+
+    .f-button svg {
+        width: var(--f-button-svg-width);
+        height: var(--f-button-svg-height);
+        fill: var(--f-button-svg-fill);
+        stroke: currentColor;
+        stroke-width: var(--f-button-svg-stroke-width);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: opacity 0.15s ease;
+        transform: var(--f-button-transform);
+        filter: var(--f-button-svg-filter);
+        pointer-events: none;
+    }
+
+    .f-button[disabled] {
+        display: none;
+    }
+
+    .f-button[disabled] svg {
+        opacity: var(--f-button-svg-disabled-opacity);
+    }
+
+    @media (hover: hover) {
+        .f-button:hover:not([disabled]) {
+            color: currentColor;
+            background-color: transparent;
+            border: 0;
+        }
+    }
+
+    .f-button:active:not([disabled]) {
+        background-color: var(--f-button-active-bg);
+    }
+
+    .f-button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    .f-button:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 0 var(--f-button-outline, 2px)
+        var(--f-button-outline-color, var(--f-button-color));
+    }
+
+    .f-button[disabled] {
+        cursor: default;
+    }
+
+    .f-button[disabled] svg {
+        opacity: var(--f-button-svg-disabled-opacity);
+    }
+
+    .is-vertical .f-carousel__nav .f-button.is-prev,
+    .is-vertical .f-carousel__nav .f-button.is-next,
+    .is-vertical .fancybox__nav .f-button.is-prev,
+    .is-vertical .fancybox__nav .f-button.is-next {
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .is-vertical .f-carousel__nav .f-button.is-prev,
+    .is-vertical .fancybox__nav .f-button.is-prev {
+        top: var(--f-button-next-pos);
+    }
+
+    .is-vertical .f-carousel__nav .f-button.is-next,
+    .is-vertical .fancybox__nav .f-button.is-next {
+        bottom: var(--f-button-next-pos);
+    }
+
+    .is-vertical .f-carousel__nav .f-button.is-prev svg,
+    .is-vertical .f-carousel__nav .f-button.is-next svg,
+    .is-vertical .fancybox__nav .f-button.is-prev svg,
+    .is-vertical .fancybox__nav .f-button.is-next svg {
+        transform: rotate(90deg);
+    }
+
+    .f-button .icon {
+        pointer-events: none;
+    }
+
+    .fancybox__nav,
+    .f-carousel__nav {
+        --c-icon__font-size: 24px;
+    }
+
+    .fancybox__nav .f-button,
+    .f-carousel__nav .f-button {
+        --f-button-width: 50px;
+        --f-button-height: 50px;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 0;
+    }
+
+    .slider-arrow .icon {
+        line-height: 1;
+        pointer-events: none;
+    }
+
+    .fancybox__nav .is-next,
+    .f-carousel__nav .is-next {
+        left: auto;
+        right: 0;
+    }
+}

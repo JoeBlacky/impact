@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\PageBuilder\Model\WidgetInitializerConfig">
+        <arguments>
+            <argument name="config" xsi:type="array">
+                <item name="app-slider-item-list" xsi:type="array">
+                    <item name="slider-widget" xsi:type="array">
+                        <item name="component" xsi:type="string">VS_PageBuilderSlider/js/content-type/app-slider-item-list/default/widget</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="DefaultWYSIWYGValidator">
+        <arguments>
+            <argument name="allowedAttributes" xsi:type="array">
+                <item name="data-slider-autoplay" xsi:type="string">data-slider-autoplay</item>
+                <item name="data-slider-autoplay-speed" xsi:type="string">data-slider-autoplay-speed</item>
+                <item name="data-slider-center-slides" xsi:type="string">data-slider-center-slides</item>
+                <item name="data-slider-infinite" xsi:type="string">data-slider-infinite</item>
+                <item name="data-slider-show-dots" xsi:type="string">data-slider-show-dots</item>
+                <item name="data-slider-dots-type" xsi:type="string">data-slider-dots-type</item>
+                <item name="data-slider-show-arrows" xsi:type="string">data-slider-show-arrows</item>
+                <item name="data-slider-show-thumbs" xsi:type="string">data-slider-show-thumbs</item>
+                <item name="data-slider-thumbs-type" xsi:type="string">data-slider-thumbs-type</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

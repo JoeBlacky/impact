@@ -1,0 +1,29 @@
+<a class="f-carousel__slide grid-item app-content-item" attr="data.main.attributes">
+    <figure class="app-content-item-inner">
+        <if args="data.image || data.icon">
+            <div class="app-content-item-media">
+                <if args="data.image.attributes()['src']">
+                    <picture class="app-content-item-img">
+                        <img attr="data.image.attributes"/>
+                    </picture>
+                </if>
+
+                <if args="data.icon">
+                    <i class="app-icon app-content-item-icon"
+                       ko-style="data.icon.style"
+                       css="data.icon.css"
+                       attr="data.icon.attributes">
+                    </i>
+                </if>
+            </div>
+        </if>
+
+        <if args="data.title.html">
+            <figcaption class="app-content-item-title"
+                        attr="data.title.attributes"
+                        html="data.title.html">
+            </figcaption>
+        </if>
+    </figure>
+</a>
+

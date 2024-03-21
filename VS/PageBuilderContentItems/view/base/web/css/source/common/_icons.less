@@ -1,0 +1,90 @@
+& when (@media-common = true) {
+    :root {
+        --c-icon__content: null;
+        --c-icon__content--after: null;
+        --c-icon__font-size: 20px;
+        --c-icon__line-height: inherit;
+        --c-icon__color: inherit;
+        --c-icon__font-weight: 400;
+        --c-icon__background: transparent;
+
+        --c-icon__color--hover: inherit;
+        --c-icon__background--hover: inherit;
+    }
+
+    .app-icon::before,
+    .app-icon::after {
+        content: var(--c-icon__content);
+        flex-shrink: 0;
+        font-family: @app-icons__font-name;
+        font-size: var(--c-icon__font-size);
+        font-weight: var(--c-icon__font-weight);
+        line-height: var(--c-icon__line-height);
+        color: var(--c-icon__color);
+        background-color: var(--c-icon__background);
+        text-transform: none;
+        font-style: normal;
+
+        letter-spacing: 0;
+        -webkit-font-feature-settings: "liga";
+        -moz-font-feature-settings: "liga=1";
+        -moz-font-feature-settings: "liga";
+        -ms-font-feature-settings: "liga" 1;
+        font-feature-settings: "liga";
+        -webkit-font-variant-ligatures: discretionary-ligatures;
+        font-variant-ligatures: discretionary-ligatures;
+    }
+
+    .app-icon::after {
+        content: var(--c-icon__content--after);
+    }
+
+    @media (hover: hover) {
+        .app-icon:where(:focus, :focus-visible, :hover)::before,
+        .app-icon:where(:focus, :focus-visible, :hover)::after {
+            color: var(--c-icon__color--hover);
+            background: var(--c-icon__background--hover);
+            outline: none;
+        }
+    }
+
+    .i-makeup-mirror {
+        --c-icon__content: @i-makeup-mirror;
+    }
+
+    .i-inclined-lipstick {
+        --c-icon__content: @i-inclined-lipstick;
+    }
+
+    .i-hair-spray {
+        --c-icon__content: @i-hair-spray;
+    }
+
+    .i-inclined-bottle {
+        --c-icon__content: @i-inclined-bottle;
+    }
+
+    .i-open-hair-scissors {
+        --c-icon__content: @i-open-hair-scissors;
+    }
+
+    .i-inclined-makeup-brush {
+        --c-icon__content: @i-inclined-makeup-brush;
+    }
+
+    .i-facial-cream {
+        --c-icon__content: @i-facial-cream;
+    }
+
+    .i-bath-sponge {
+        --c-icon__content: @i-bath-sponge;
+    }
+
+    .i-hand-mirror {
+        --c-icon__content: @i-hand-mirror;
+    }
+
+    .i-cucumber-slices-on-face {
+        --c-icon__content: @i-cucumber-slices-on-face;
+    }
+}

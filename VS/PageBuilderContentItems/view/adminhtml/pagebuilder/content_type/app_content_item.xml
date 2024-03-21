@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="app-content-item"
+          label="Content Item"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="VS_PageBuilderContentItems/js/content-type/app-content-item/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_app_content_item_form"
+          translate="label">
+        <children default_policy="deny"/>
+        <parents default_policy="deny">
+            <parent name="app-content-item-list" policy="allow"/>
+            <parent name="app-content-item-slider" policy="allow"/>
+        </parents>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="VS_PageBuilderContentItems/content-type/app-content-item/default/preview"
+                        master_template="VS_PageBuilderContentItems/content-type/app-content-item/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="image">
+                        <attribute name="loading" source="loading"/>
+                        <attribute name="fetchpriority" source="fetchpriority"/>
+                        <attribute name="image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt_attribute" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="title">
+                        <html name="component_title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="icon">
+                        <css name="icon">
+                            <filter>
+                                <class source="app-icon"/>
+                                <class source="app-content-item-icon"/>
+                            </filter>
+                        </css>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

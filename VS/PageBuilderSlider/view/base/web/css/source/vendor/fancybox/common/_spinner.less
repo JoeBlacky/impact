@@ -1,0 +1,37 @@
+& when (@media-common = true) {
+    :root {
+        --f-spinner-width: 36px;
+        --f-spinner-height: 36px;
+        --f-spinner-color-1: rgba(0, 0, 0, 0.1);
+        --f-spinner-color-2: rgba(17, 24, 28, 0.8);
+        --f-spinner-stroke: 2.75;
+    }
+
+    .f-spinner {
+        margin: auto;
+        padding: 0;
+        width: var(--f-spinner-width);
+        height: var(--f-spinner-height);
+    }
+
+    .f-spinner svg {
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        animation: f-spinner-rotate 2s linear infinite;
+    }
+
+    .f-spinner svg * {
+        stroke-width: var(--f-spinner-stroke);
+        fill: none;
+    }
+
+    .f-spinner svg *:first-child {
+        stroke: var(--f-spinner-color-1);
+    }
+
+    .f-spinner svg *:last-child {
+        stroke: var(--f-spinner-color-2);
+        animation: f-spinner-dash 2s ease-in-out infinite;
+    }
+}

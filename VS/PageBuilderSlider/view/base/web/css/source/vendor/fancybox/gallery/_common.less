@@ -1,0 +1,87 @@
+& when (@media-common = true) {
+    .f-carousel {
+        --f-carousel-theme-color: #000;
+        --f-carousel-spacing: 0px;
+        --f-carousel-slide-width: 100%;
+        --f-carousel-slide-height: auto;
+        --f-carousel-slide-padding: 0;
+        --f-button-width: 42px;
+        --f-button-height: 42px;
+        --f-button-color: var(--f-carousel-theme-color, currentColor);
+        --f-button-hover-color: var(--f-carousel-theme-color, currentColor);
+        --f-button-bg: transparent;
+        --f-button-hover-bg: var(--f-button-bg);
+        --f-button-active-bg: var(--f-button-bg);
+        --f-button-svg-width: 24px;
+        --f-button-svg-height: 24px;
+        --f-button-next-pos: 10px;
+        --f-button-prev-pos: 10px;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .f-carousel.is-ltr {
+        direction: ltr;
+    }
+
+    .f-carousel.is-rtl {
+        direction: rtl;
+    }
+
+    .f-carousel__viewport {
+        overflow: clip visible;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .f-carousel__viewport.is-draggable {
+        cursor: move;
+        cursor: grab;
+    }
+
+    .f-carousel__viewport.is-dragging {
+        cursor: move;
+        cursor: grabbing;
+    }
+
+    .f-carousel__track {
+        display: flex;
+        margin: 0 auto;
+        padding: 0;
+        height: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .f-carousel__track > * {
+        position: relative;
+        flex: 0 0 auto;
+        width: var(--f-carousel-slide-width);
+        max-width: 100%;
+        height: var(--f-carousel-slide-height);
+        margin: 0 var(--f-carousel-spacing) 0 0;
+        padding: var(--f-carousel-slide-padding);
+        overscroll-behavior: contain;
+        outline: 0;
+        transform-origin: center center;
+    }
+
+    .f-carousel__slide.is-loading {
+        min-height: 88px;
+        min-width: 88px;
+    }
+
+    .f-carousel.is-vertical {
+        --f-carousel-slide-height: 100%;
+    }
+
+    .f-carousel.is-vertical .f-carousel__track {
+        flex-wrap: wrap;
+    }
+
+    .f-carousel.is-vertical .f-carousel__slide {
+        margin: 0 0 var(--f-carousel-spacing) 0;
+    }
+
+}

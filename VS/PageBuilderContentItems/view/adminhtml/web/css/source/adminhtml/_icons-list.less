@@ -1,0 +1,22 @@
+.admin__field .icons-list {
+    --grid-item__min-width: 55px;
+    --grid-item__max-width: 1fr;
+    --c-icon__font-size: 24px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-item__min-width), var(--grid-item__max-width)));
+}
+
+.admin__field .icons-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    height: auto;
+    min-width: auto;
+}
+
+.admin__field .icons-list span {
+    display: none;
+}

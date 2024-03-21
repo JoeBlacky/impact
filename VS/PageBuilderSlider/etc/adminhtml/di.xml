@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="SliderThumbnailsTypeSource" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">small</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="classic" xsi:type="array">
+                    <item name="value" xsi:type="string">classic</item>
+                    <item name="title" xsi:type="string" translate="true">Classic</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderSlider::images/thumbs/classic.svg</item>
+                </item>
+                <item name="modern" xsi:type="array">
+                    <item name="value" xsi:type="string">modern</item>
+                    <item name="title" xsi:type="string" translate="true">Modern</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderSlider::images/thumbs/modern.svg</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SliderDotsTypeSource" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">small</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="value" xsi:type="string">classic</item>
+                    <item name="title" xsi:type="string" translate="true">Classic</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderSlider::images/dots/classic.svg</item>
+                </item>
+                <item name="1" xsi:type="array">
+                    <item name="value" xsi:type="string">dynamic</item>
+                    <item name="title" xsi:type="string" translate="true">Dynamic</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderSlider::images/dots/dynamic.svg</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

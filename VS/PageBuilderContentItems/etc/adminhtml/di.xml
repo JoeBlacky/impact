@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="SingleAppearanceType" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">large</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="value" xsi:type="string">default</item>
+                    <item name="title" xsi:type="string" translate="true">Default</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ContentDisplayOptionsSource" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">large</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="value" xsi:type="string"/>
+                    <item name="title" xsi:type="string" translate="true">Stack</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderContentItems::images/content-type/app-content-item-list/display/stack.svg</item>
+                </item>
+                <item name="1" xsi:type="array">
+                    <item name="value" xsi:type="string">_items-inline</item>
+                    <item name="title" xsi:type="string" translate="true">Inline</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderContentItems::images/content-type/app-content-item-list/display/inline.svg</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="ContentAlignmentOptionsSource" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">large</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="value" xsi:type="string">start</item>
+                    <item name="title" xsi:type="string" translate="true">Start</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderContentItems::images/content-type/app-content-item-list/alignment/start.svg</item>
+                </item>
+                <item name="1" xsi:type="array">
+                    <item name="value" xsi:type="string">center</item>
+                    <item name="title" xsi:type="string" translate="true">Center</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderContentItems::images/content-type/app-content-item-list/alignment/center.svg</item>
+                </item>
+                <item name="2" xsi:type="array">
+                    <item name="value" xsi:type="string">end</item>
+                    <item name="title" xsi:type="string" translate="true">End</item>
+                    <item name="icon" xsi:type="string">VS_PageBuilderContentItems::images/content-type/app-content-item-list/alignment/end.svg</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="AppIconsSource" type="Magento\PageBuilder\Model\Source\VisualSelect">
+        <arguments>
+            <argument name="optionsSize" xsi:type="string">small</argument>
+            <argument name="optionsData" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="value" xsi:type="string">i-makeup-mirror</item>
+                    <item name="title" xsi:type="string" translate="true">Makeup Mirror</item>
+                </item>
+                <item name="3" xsi:type="array">
+                    <item name="value" xsi:type="string">i-inclined-lipstick</item>
+                    <item name="title" xsi:type="string" translate="true">Inclined Lipstick</item>
+                </item>
+                <item name="6" xsi:type="array">
+                    <item name="value" xsi:type="string">i-hair-spray</item>
+                    <item name="title" xsi:type="string" translate="true">Hair Spray</item>
+                </item>
+                <item name="12" xsi:type="array">
+                    <item name="value" xsi:type="string">i-inclined-bottle</item>
+                    <item name="title" xsi:type="string" translate="true">Inclined Bottle</item>
+                </item>
+                <item name="15" xsi:type="array">
+                    <item name="value" xsi:type="string">i-open-hair-scissors</item>
+                    <item name="title" xsi:type="string" translate="true">Open Hair Scissors</item>
+                </item>
+                <item name="18" xsi:type="array">
+                    <item name="value" xsi:type="string">i-inclined-makeup-brush</item>
+                    <item name="title" xsi:type="string" translate="true">Inclined Makeup Brush</item>
+                </item>
+                <item name="21" xsi:type="array">
+                    <item name="value" xsi:type="string">i-facial-cream</item>
+                    <item name="title" xsi:type="string" translate="true">Facial Cream</item>
+                </item>
+                <item name="24" xsi:type="array">
+                    <item name="value" xsi:type="string">i-bath-sponge</item>
+                    <item name="title" xsi:type="string" translate="true">Bath Sponge</item>
+                </item>
+                <item name="27" xsi:type="array">
+                    <item name="value" xsi:type="string">i-hand-mirror</item>
+                    <item name="title" xsi:type="string" translate="true">Hand Mirror</item>
+                </item>
+                <item name="30" xsi:type="array">
+                    <item name="value" xsi:type="string">i-cucumber-slices-on-face</item>
+                    <item name="title" xsi:type="string" translate="true">Cucumber Slices on Face</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

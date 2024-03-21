@@ -1,0 +1,20 @@
+& when (@media-common = true) {
+    :root {
+        --indent__small: 5px;
+        --indent__base: 10px;
+        --indent__large: 25px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    :root {
+        --indent__base: 20px;
+        --indent__large: 40px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    :root {
+        --indent__large: 50px;
+    }
+}

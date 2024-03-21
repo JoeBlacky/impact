@@ -1,0 +1,71 @@
+& when (@media-common = true) {
+    :root {
+        --c-aci-img-size: 100px;
+        --c-aci-accent-color: #fff;
+    }
+
+    .app-content-item {
+        text-align: center;
+        color: #7B7B7B;
+    }
+
+    .app-content-item:is(:hover, :visited, :focus, :focus-visible) {
+        color: #7B7B7B;
+        text-decoration: none;
+    }
+
+    .app-content-item-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .app-content-item-media {
+        --c-icon__font-size: 40px;
+
+        position: relative;
+        width: var(--c-aci-img-size);
+        height: var(--c-aci-img-size);
+        color: var(--c-aci-accent-color);
+        border-radius: 50%;
+        background-color: #7B7B7B;
+    }
+
+    .app-content-item-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        overflow: hidden;
+        font-size: 0;
+        filter: brightness(.8);
+    }
+
+    .app-content-item-icon {
+        --border-width: 3px;
+        position: absolute;
+        inset: ~'calc(-1 * var(--border-width))';
+        display: grid;
+        place-items: center;
+        border: var(--border-width) solid transparent;
+        border-radius: 50%;
+        transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    }
+
+    @media (hover: hover) {
+        .app-content-item:where(:hover, :focus, :focus-visible) .app-content-item-icon {
+            border-color: var(--c-icon__color);
+            background-color: rgba(255, 255, 255, .5);
+        }
+    }
+
+    .items-grid .app-content-item {
+        display: inline-flex;
+        justify-content: center;
+        width: var(--grid-item__min-width);
+        flex: 1 0 var(--grid-item__min-width);
+    }
+}

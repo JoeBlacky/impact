@@ -1,0 +1,48 @@
+<div class="pagebuilder-content-type pagebuilder-entity pagebuilder-entity-preview pagebuilder-app-content-item"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div class="app-content-item">
+        <figure class="app-content-item-inner">
+            <if args="isPlaceholderShown()">
+                <div class="app-content-item-media">
+                    <picture class="app-content-item-img">
+                        <img src="https://via.placeholder.com/200x200" />
+                    </picture>
+
+                    <i class="app-icon app-content-item-icon i-cucumber-slices-on-face"></i>
+                </div>
+
+                <figcaption class="app-content-item-title" text="'Item Title'"></figcaption>
+            </if>
+
+            <if args="!isPlaceholderShown()">
+                <div class="app-content-item-media">
+                    <if args="componentImageUrl().length">
+                        <picture class="app-content-item-img">
+                            <img if="componentImageUrl().length"
+                                 data-bind="attr: {src: componentImageUrl()}"/>
+                        </picture>
+                    </if>
+
+                    <if args="data.icon">
+                        <i class="app-icon app-content-item-icon"
+                           ko-style="data.icon.style"
+                           css="data.icon.css"
+                           attr="data.icon.attributes">
+                        </i>
+                    </if>
+                </div>
+
+                <if args="data.title.html">
+                    <figcaption class="app-content-item-title"
+                                attr="data.title.attributes"
+                                html="data.title.html">
+                    </figcaption>
+                </if>
+            </if>
+        </figure>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<section attr="data.main.attributes"
+         ko-style="data.main.style"
+         class="app-content-item-list items-grid-block">
+
+    <if args="data.title || data.description">
+        <header class="block-heading"
+                attr="data.header.attributes"
+                ko-style="data.header.style">
+            <if args="data.title && data.title?.html">
+                <h2 class="heading-title"
+                    attr="data.title.attributes"
+                    ko-style="data.title.style"
+                    html="data.title.html"></h2>
+            </if>
+
+            <if args="data.description && data.description?.html">
+                <div class="heading-description"
+                     attr="data.description.attributes"
+                     ko-style="data.description.style"
+                     html="data.description.html"></div>
+            </if>
+        </header>
+    </if>
+
+    <div class="block-content"
+         attr="data.content.attributes"
+         css="data.content.css">
+        <nav class="items-grid">
+            <render args="masterTemplate"></render>
+        </nav>
+    </div>
+</section>

@@ -1,0 +1,272 @@
+& when (@media-common = true) {
+    @keyframes f-spinner-rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes f-spinner-dash {
+        0% {
+            stroke-dasharray: 1, 150;
+            stroke-dashoffset: 0;
+        }
+        50% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -35;
+        }
+        100% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -124;
+        }
+    }
+
+    .f-zoomInUp {
+        animation: 0.2s ease-out 0.1s both f-zoomInUp;
+    }
+
+    .f-zoomOutDown {
+        animation: 0.2s ease-out both f-zoomOutDown;
+    }
+
+    @keyframes f-zoomInUp {
+        from {
+            transform: scale(0.975) translate3d(0, 16px, 0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1) translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-zoomOutDown {
+        to {
+            transform: scale(0.975) translate3d(0, 16px, 0);
+            opacity: 0;
+        }
+    }
+
+    .f-throwOutUp {
+        animation: 0.175s ease-out both f-throwOutUp;
+    }
+
+    .f-throwOutDown {
+        animation: 0.175s ease-out both f-throwOutDown;
+    }
+
+    @keyframes f-throwOutUp {
+        to {
+            transform: translate3d(0, -150px, 0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes f-throwOutDown {
+        to {
+            transform: translate3d(0, 150px, 0);
+            opacity: 0;
+        }
+    }
+
+    .f-fadeIn {
+        animation: 0.2s ease both f-fadeIn;
+        z-index: 2;
+    }
+
+    .f-fadeOut {
+        animation: 0.2s ease both f-fadeOut;
+        z-index: 1;
+    }
+
+    @keyframes f-fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-fadeOut {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .f-fadeSlowIn {
+        animation: 0.5s ease both f-fadeSlowIn;
+        z-index: 2;
+    }
+
+    .f-fadeSlowOut {
+        animation: 0.5s ease both f-fadeSlowOut;
+        z-index: 1;
+    }
+
+    @keyframes f-fadeSlowIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-fadeSlowOut {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .f-fadeFastIn {
+        animation: 0.2s ease-out both f-fadeFastIn;
+        z-index: 2;
+    }
+
+    .f-fadeFastOut {
+        animation: 0.2s ease-out both f-fadeFastOut;
+        z-index: 2;
+    }
+
+    @keyframes f-fadeFastIn {
+        0% {
+            opacity: 0.75;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-fadeFastOut {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .f-crossfadeIn {
+        animation: 0.2s ease-out both f-crossfadeIn;
+        z-index: 2;
+    }
+
+    .f-crossfadeOut {
+        animation: 0.1s linear 0.1s both f-crossfadeOut;
+        z-index: 1;
+    }
+
+    @keyframes f-crossfadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-crossfadeOut {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .f-slideIn.from-next {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-slideInNext;
+    }
+
+    .f-slideIn.from-prev {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-slideInPrev;
+    }
+
+    .f-slideOut.to-next {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-slideOutNext;
+    }
+
+    .f-slideOut.to-prev {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-slideOutPrev;
+    }
+
+    @keyframes f-slideInPrev {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes f-slideInNext {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes f-slideOutNext {
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes f-slideOutPrev {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    .f-classicIn.from-next {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-classicInNext;
+        z-index: 2;
+    }
+
+    .f-classicIn.from-prev {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-classicInPrev;
+        z-index: 2;
+    }
+
+    .f-classicOut.to-next {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-classicOutNext;
+        z-index: 1;
+    }
+
+    .f-classicOut.to-prev {
+        animation: 0.85s cubic-bezier(0.16, 1, 0.3, 1) f-classicOutPrev;
+        z-index: 1;
+    }
+
+    @keyframes f-classicInNext {
+        0% {
+            transform: translateX(-75px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-classicInPrev {
+        0% {
+            transform: translateX(75px);
+            opacity: 0;
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes f-classicOutNext {
+        100% {
+            transform: translateX(-75px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes f-classicOutPrev {
+        100% {
+            transform: translateX(75px);
+            opacity: 0;
+        }
+    }
+}

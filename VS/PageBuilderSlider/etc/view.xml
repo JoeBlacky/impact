@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <exclude>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/fancybox/fancybox.esm.min.js</item>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/carousel/carousel.esm.min.js</item>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/carousel/autoplay.esm.min.js</item>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/carousel/thumbs.esm.min.js</item>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/panzoom/panzoom.esm.min.js</item>
+        <item type="file">VS_PageBuilderSlider::js/vendor/fancybox/panzoom/toolbar.esm.min.js</item>
+    </exclude>
+</view>

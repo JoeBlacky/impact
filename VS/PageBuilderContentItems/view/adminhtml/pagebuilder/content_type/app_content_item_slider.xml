@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="app-content-item-slider"
+          label="Content Items Slider"
+          icon="icon-pagebuilder-slider"
+          menu_section="add_content"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="VS_PageBuilderSlider/js/content-type/app-slider-item-list/default/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_app_content_item_slider_form"
+          sortOrder="110"
+          translate="label">
+        <children default_policy="deny">
+            <child name="app-content-item" policy="allow"/>
+        </children>
+        <parents default_policy="deny">
+            <parent name="column" policy="allow"/>
+            <parent name="root-container" policy="allow"/>
+        </parents>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="VS_PageBuilderContentItems/content-type/app-content-item-list/slider/preview"
+                        master_template="VS_PageBuilderContentItems/content-type/app-content-item-list/slider/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <style name="content_align" source="align_items"/>
+                        <style name="background_color" source="background_color"/>
+                    </element>
+                    <element name="header">
+                        <style name="content_align" source="text_align"/>
+                    </element>
+                    <element name="title">
+                        <html name="component_title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                        <style name="title_color" source="color"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" preview_converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="slider">
+                        <attribute name="autoplay" source="data-slider-autoplay"/>
+                        <attribute name="autoplay_speed" source="data-slider-autoplay-speed"/>
+                        <attribute name="center_slides" source="data-slider-center-slides"/>
+                        <attribute name="infinite" source="data-slider-infinite"/>
+                        <attribute name="show_dots" source="data-slider-show-dots"/>
+                        <attribute name="dots_type" source="data-slider-dots-type"/>
+                        <attribute name="show_arrows" source="data-slider-show-arrows"/>
+                        <attribute name="show_thumbs" source="data-slider-show-thumbs"/>
+                        <attribute name="thumbs_type" source="data-slider-thumbs-type"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

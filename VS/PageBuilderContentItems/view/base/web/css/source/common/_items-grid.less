@@ -1,0 +1,57 @@
+& when (@media-common = true) {
+    :root {
+        --grid__gap: var(--indent__large);
+        --grid-item__min-width: 120px;
+        --grid-item__max-width: 1fr;
+    }
+
+    .items-grid {
+        .lib-list-reset-styles();
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--grid__gap);
+    }
+
+    .grid-item {
+        --f-carousel-slide-width: var(--grid-item__min-width);
+        width: var(--grid-item__min-width);
+    }
+
+    ._items-inline {
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    ._items-inline > .items-grid {
+        flex-wrap: nowrap;
+    }
+
+    ._items-inline .grid-item {
+        scroll-snap-align: start;
+    }
+
+    ._items-inline .pagebuilder-options {
+        top: 20px;
+    }
+
+    .items-grid.f-carousel {
+        --f-carousel-spacing: var(--grid__gap);
+        overflow: hidden;
+        flex-wrap: nowrap;
+    }
+
+    .items-grid.f-carousel.is-loaded {
+        overflow: initial;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .items-grid .f-carousel__slide:last-child {
+        --f-carousel-spacing: 0;
+    }
+
+    .f-carousel[data-slider-show-arrows="true"] {
+        padding-inline: var(--f-button-width);
+    }
+}

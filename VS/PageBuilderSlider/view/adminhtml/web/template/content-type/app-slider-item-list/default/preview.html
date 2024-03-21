@@ -1,0 +1,16 @@
+<div class="pagebuilder-content-type dynamic-collections-list-wrapper"
+     attr="data.main.attributes"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <div class="f-carousel"
+        afterRender="afterRender"
+        each="contentType.getChildren()"
+        attr="Object.assign({}, data.main.attributes(), { id: contentType.id + '-children' }, data.slider.attributes)">
+        <div class="f-carousel__slide"
+            template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+            attr="Object.assign({}, { 'data-thumb-src': preview.data.image.attributes()['src'], id: id })"
+            css="{'pagebuilder-content-type-hidden': !preview.display()}"></div>
+    </div>
+</div>

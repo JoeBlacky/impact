@@ -1,0 +1,81 @@
+& when (@media-common = true) {
+    :root {
+        --f-carousel-dot-scale: 0;
+        --f-carousel-dot-width: 14px;
+        --f-carousel-dot-height: 14px;
+        --f-carousel-dot-radius: 50%;
+    }
+
+    .f-carousel__dots {
+        .lib-list-reset-styles();
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        padding: var(--indent__base);
+        pointer-events: none;
+    }
+
+    .f-carousel__dots button {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        appearance: none;
+        background: transparent;
+        transition: scale .2s ease-in-out;
+        pointer-events: all;
+    }
+
+    .f-carousel__dots li {
+        margin: 0;
+    }
+
+    .f-carousel__dot {
+        display: block;
+        margin: 0;
+        padding: 1px;
+        border: 1px solid #000;
+        width: var(--f-carousel-dot-width);
+        height: var(--f-carousel-dot-height);
+        border-radius: var(--f-carousel-dot-radius);
+        background-color: transparent;
+        background-clip: content-box;
+        line-height: 0;
+        font-size: 0;
+        cursor: pointer;
+        pointer-events: none;
+        transition: scale .2s ease-in-out;
+    }
+
+    .is-current .f-carousel__dot {
+        background-color: #000;
+    }
+
+    .is-dynamic li:not(.is-prev, .is-next, .is-current, .is-after-next, .is-before-prev) .f-carousel__dot {
+        --f-carousel-dot-width: 0;
+    }
+
+    .is-dynamic .f-carousel__dot {
+        scale: var(--f-carousel-dot-scale);
+    }
+
+    .is-dynamic .is-before-prev,
+    .is-dynamic .is-after-next {
+        --f-carousel-dot-scale: .33;
+    }
+
+    .is-dynamic .is-prev,
+    .is-dynamic .is-next {
+        --f-carousel-dot-scale: .77;
+    }
+
+    .is-dynamic .is-current {
+        --f-carousel-dot-scale: 1;
+    }
+
+    .is-dynamic .is-before-prev,
+    .is-dynamic .is-after-next {
+        --f-carousel-dot-scale: .44;
+    }
+}

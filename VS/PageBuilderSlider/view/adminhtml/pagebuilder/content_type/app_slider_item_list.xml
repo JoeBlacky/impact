@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="app-slider-item-list"
+          label="App Slider"
+          component="Magento_PageBuilder/js/content-type-collection"
+          preview_component="VS_PageBuilderSlider/js/content-type/app-slider-item-list/default/preview"
+          master_component="Magento_PageBuilder/js/content-type/master-collection"
+          form="pagebuilder_app_slider_item_list_form"
+          translate="label">
+        <children default_policy="deny">
+            <child name="app-slider-item" policy="allow"/>
+        </children>
+        <parents default_policy="deny">
+            <parent name="column" policy="allow"/>
+        </parents>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="VS_PageBuilderSlider/content-type/app-slider-item-list/default/preview"
+                        master_template="VS_PageBuilderSlider/content-type/app-slider-item-list/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <style name="background_color" source="background_color"/>
+                    </element>
+                    <element name="slider">
+                        <attribute name="autoplay" source="data-slider-autoplay"/>
+                        <attribute name="autoplay_speed" source="data-slider-autoplay-speed"/>
+                        <attribute name="center_slides" source="data-slider-center-slides"/>
+                        <attribute name="infinite" source="data-slider-infinite"/>
+                        <attribute name="show_dots" source="data-slider-show-dots"/>
+                        <attribute name="dots_type" source="data-slider-dots-type"/>
+                        <attribute name="show_arrows" source="data-slider-show-arrows"/>
+                        <attribute name="show_thumbs" source="data-slider-show-thumbs"/>
+                        <attribute name="thumbs_type" source="data-slider-thumbs-type"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

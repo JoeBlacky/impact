@@ -1,0 +1,39 @@
+<section class="pagebuilder-content-type app-content-item-list app-content-item-slider dynamic-collections-list-wrapper"
+     attr="data.main.attributes"
+     ko-style="data.main.style"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+
+    <render args="getOptions().template"></render>
+
+    <if args="data.title || data.description">
+        <header class="block-heading"
+                attr="data.header.attributes"
+                ko-style="data.header.style">
+            <if args="data.title && data.title?.html">
+                <h2 class="heading-title"
+                    attr="data.title.attributes"
+                    ko-style="data.title.style"
+                    html="data.title.html"></h2>
+            </if>
+
+            <if args="data.description && data.description?.html">
+                <div class="heading-description"
+                     attr="data.description.attributes"
+                     ko-style="data.description.style"
+                     html="data.description.html"></div>
+            </if>
+        </header>
+    </if>
+
+    <div class="block-content">
+        <div class="f-carousel items-grid"
+             afterRender="afterRender"
+             each="contentType.getChildren()"
+             attr="Object.assign({}, data.slider.attributes(), { id: contentType.id + '-children' }, data.slider.attributes)">
+            <div class="f-carousel__slide grid-item"
+                 template="{ name: preview.template, data: preview, afterRender: function () { preview.dispatchAfterRenderEvent.apply(preview, arguments); } }"
+                 attr="Object.assign({}, { 'data-thumb-src': preview.data.image.attributes()['src'], id: id })"
+                 css="{'pagebuilder-content-type-hidden': !preview.display()}"></div>
+        </div>
+    </div>
+</section>
